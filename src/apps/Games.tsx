@@ -151,15 +151,17 @@ function FootballManager({ onBack, title, coins, setCoins, diamonds, setDiamonds
   ]);
 
   const marketPlayers: Player[] = [
-    { id: 10, name: 'Cristiano Ronaldo', rating: 91, price: 50000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/20801.png' },
-    { id: 11, name: 'Lionel Messi', rating: 90, price: 48000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/158023.png' },
-    { id: 12, name: 'K. Mbappe', rating: 89, price: 35000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/231747.png' },
-    { id: 13, name: 'E. Haaland', rating: 88, price: 32000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/239085.png' },
-    { id: 14, name: 'Vinicius Jr', rating: 88, price: 30000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/238794.png' },
-    { id: 15, name: 'J. Bellingham', rating: 89, price: 34000, position: 'MID', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/256958.png' },
-    { id: 16, name: 'K. De Bruyne', rating: 87, price: 31000, position: 'MID', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/192985.png' },
-    { id: 17, name: 'V. van Dijk', rating: 88, price: 29000, position: 'DEF', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/203376.png' },
-    { id: 18, name: 'Mystery Legend', rating: 99, price: 0, diamondPrice: 5000, position: 'FWD', photo: 'https://api.dicebear.com/7.x/shapes/svg?seed=mystery' },
+    { id: 10, name: 'Cristiano Ronaldo', rating: 124, price: 50000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/20801.png' },
+    { id: 11, name: 'Zinedine Zidane', rating: 123, price: 48000, position: 'MID', photo: 'https://api.sofascore.app/api/v1/manager/145/image' },
+    { id: 12, name: 'Karim Benzema', rating: 122, price: 35000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/165153.png' },
+    { id: 13, name: 'Toni Kroos', rating: 121, price: 32000, position: 'MID', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/182521.png' },
+    { id: 14, name: 'Gareth Bale', rating: 120, price: 30000, position: 'FWD', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/173731.png' },
+    { id: 15, name: 'J. Bellingham', rating: 121, price: 34000, position: 'MID', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/256958.png' },
+    { id: 16, name: 'I. Casillas', rating: 121, price: 31000, position: 'GK', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/231.png' },
+    { id: 17, name: 'G. Buffon', rating: 120, price: 29000, position: 'GK', photo: 'https://www.fifarosters.com/assets/players/fifa24/faces/1179.png' },
+    { id: 19, name: 'Lionel Messi', rating: 125, price: 60000, position: 'FWD', photo: 'https://api.sofascore.app/api/v1/player/12994/image' },
+    { id: 20, name: 'M. Salah (Musr)', rating: 124, price: 55000, position: 'FWD', photo: 'https://api.sofascore.app/api/v1/player/159665/image' },
+    { id: 18, name: 'Mystery Icon', rating: 130, price: 0, diamondPrice: 5000, position: 'FWD', photo: 'https://api.dicebear.com/7.x/shapes/svg?seed=mystery' },
   ];
 
   const startMatch = () => {
@@ -221,13 +223,13 @@ function FootballManager({ onBack, title, coins, setCoins, diamonds, setDiamonds
     setIsPlayingMatch(false);
     let reward = 0;
     if (finalScore[0] > finalScore[1]) {
-      reward = title === 'FC Mobile' ? 1200 : 1000;
+      reward = 120000;
       setCoins(prev => prev + reward);
-      setDiamonds(prev => prev + 10);
-      alert(`G'ALABA! Jami ${reward} tanga yutdingiz!`);
+      setDiamonds(prev => prev + 100);
+      alert(`G'ALABA! Jami ${reward.toLocaleString()} tanga yutdingiz!`);
     } else {
-      setCoins(prev => prev + 200);
-      alert("O'yin yakunlandi. 200 tanga tasalli mukofoti.");
+      setCoins(prev => prev + 10000);
+      alert("O'yin yakunlandi. 10,000 tanga tasalli mukofoti.");
     }
   };
 
@@ -248,7 +250,7 @@ function FootballManager({ onBack, title, coins, setCoins, diamonds, setDiamonds
   const upgradePlayer = (id: number) => {
     if (coins >= 500) {
       setCoins(prev => prev - 500);
-      setTeam(prev => prev.map(p => p.id === id ? { ...p, rating: Math.min(100, p.rating + 1) } : p));
+      setTeam(prev => prev.map(p => p.id === id ? { ...p, rating: Math.min(150, p.rating + 1) } : p));
       alert("O'yinchi kuchaytirildi! +1 OVER");
     } else alert("Tanga etarli emas (500 kerak)");
   };
