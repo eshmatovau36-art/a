@@ -1,0 +1,9 @@
+{
+  "name": "Smart Virtual Phone",
+  "description": "A fully functional virtual phone simulation with AI chat, games, video calling, and various apps.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": []
+}
